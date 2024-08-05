@@ -1,4 +1,3 @@
-Personal 
-Config repo
+Personal repo
 
 
