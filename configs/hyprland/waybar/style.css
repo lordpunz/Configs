@@ -1,0 +1,114 @@
+* {
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: rgba(43, 48, 59, 0.9);
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 25px;
+    border-right: 1px solid #000000;
+}
+
+#workspaces button:last-child {
+    border-right: none;
+}
+
+#workspaces button.focused {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+    border-right: 1px solid #000000;
+}
+
+#clock {
+    background-color: transparent;
+}
+
+#battery {
+    background-color: transparent;
+}
+
+#cpu {
+    background-color: transparent;
+}
+
+#memory {
+    background-color: transparent;
+}
+
+#disk {
+    background-color: transparent;
+}
+
+#temperature {
+    background-color: transparent;
+}
+
+#backlight {
+    background-color: transparent;
+}
+
+#network {
+    background-color: transparent;
+}
+
+#pulseaudio {
+    background-color: transparent;
+}
+
+#wireplumber {
+    background-color: transparent;
+}
+
+#tray {
+    background-color: transparent;
+}
+
+/* Remove border from the last element in each module group */
+.modules-left > widget:last-child > *,
+.modules-center > widget:last-child > *,
+.modules-right > widget:last-child > * {
+    border-right: none;
+}
+
+/* Keep other styles as they were, just remove background colors */
