@@ -11,13 +11,16 @@
         "custom/media"
     ],
     "modules-center": [
-       // "custom/updates",
-        "idle_inhibitor",
-        "clock"
+ //       "custom/updates",
+ //       "idle_inhibitor",
+        "custom/gpt",
+        "clock",
+        "custom/claude"
     ],
     "modules-right": [
         "mpd",
         "pulseaudio",
+        "bluetooth",
         "network",
         "backlight",
         "battery",
@@ -167,13 +170,20 @@
     },
     "network": {
         //"interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "on-click": "kitty nmtui"
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected 󰖪",
+        "format-disabled": "Disabled 󰖪",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format-disabled": "WiFi Disabled",
+        "on-click": "~/.config/waybar/scripts/network.sh",
+        "interval": 5
     },
+
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
@@ -208,8 +218,8 @@
 
     "custom/updates": {
         "format": "{}",
-        "exec": "~/.config/waybar/scripts/update-sys",
-        "on-click": "~/.config/waybar/scripts/update-sys update",
+        "exec": "~/.config/waybar/scripts/update.sh",
+        "on-click": "~/.config/waybar/scripts/update.sh update",
         "interval": 300,
         "tooltip": true
     },
@@ -218,6 +228,32 @@
         "format": " ",
         "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
         "tooltip": false
-    }
+    },
+
+    "bluetooth": {
+        "format": "{icon}",
+        "format-icons": {
+            "disabled": "󰂲 ",
+            "enabled": " ",
+            "connected": " "
+        },
+        "tooltip-format": "{status}\n{num_connections} connected",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "blueman-manager"
+    },
+    "custom/gpt": {
+      "format":"󱜹 ",
+      "on-click":"firefox --new-window https://chat.openai.com",
+      "tooltip-format":"chat-gpt"
+    },
+
+  "custom/claude":{
+      "format":"󱜹 ",
+      "on-click":"firefox --new-window https://claude.ai",
+      "tooltip-format":"claude"
+
+  }
 }
+
 
