@@ -180,7 +180,7 @@
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format-disconnected": "Disconnected",
         "tooltip-format-disabled": "WiFi Disabled",
-        "on-click": "~/.config/waybar/scripts/network.sh",
+        "on-click": "kitty nmtui",
         "interval": 5
     },
 
@@ -243,13 +243,13 @@
         "on-click": "blueman-manager"
     },
     "custom/gpt": {
-      "format":"󱜹 ",
+      "format":" 󱜹 ",
       "on-click":"firefox --new-window https://chat.openai.com",
       "tooltip-format":"chat-gpt"
     },
 
   "custom/claude":{
-      "format":"󱜹 ",
+      "format":" 󱜹 ",
       "on-click":"firefox --new-window https://claude.ai",
       "tooltip-format":"claude"
 
